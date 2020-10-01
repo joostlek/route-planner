@@ -25,15 +25,14 @@ class NsApi:
         query = {"fromStation": start, "toStation": destination}
         if dt is not None:
             query["dateTime"] = dt.isoformat()
-
         return self.__request("/reisinformatie-api/api/v3/trips", query)["trips"]
-        
 
     @property
     def stations(self) -> List[Dict[str, str]]:
         if self._stations is None:
-            self._stations = self.__request("/places-api/v2/places", {"types": "Stations"})
-        return self._stations
+            self._stations = self.__request("/reisinformatie-api/api/v2/stations")
+        return self._stations["payload"]
+
 
     @property
     def ov_bikes(self):
