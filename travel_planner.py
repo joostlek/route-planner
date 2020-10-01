@@ -15,7 +15,10 @@ try:
 except ImportError:
     from csv_convert import ov_card, crowdness_data
 
-ns = NsApi("609622c391014b43bba1d102e7855a14")
+key = open("api_key.txt").readline()
+
+
+ns = NsApi(key)
 places = ns.stations
 
 def get_trip(trip: str, date: datetime = None) -> List[Dict[str, str]]:
