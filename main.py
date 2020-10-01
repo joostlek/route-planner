@@ -21,9 +21,6 @@ except ImportError:
 
 app = FastAPI()
 
-
-
-
 @app.get("/dev/advice")
 def generate_advice(start: str, destination: str) -> List[Advice]:
     return get_routes(start, destination)
