@@ -29,10 +29,10 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Push to GitHub Packages
-          uses: docker/build-push-action@v1
-          with:
-            username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
-            registry: docker.pkg.github.com
-            repository: joostlek/route-planner/route-planner
-            tag_with_ref: true
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: joostlek/route-planner/route-planner
+          tag_with_ref: true
