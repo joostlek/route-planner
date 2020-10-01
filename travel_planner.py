@@ -1,6 +1,7 @@
 from typing import Dict, List
 from datetime import datetime
 import networkx as nx
+import os
 import matplotlib.pyplot as plt
 
 
@@ -15,7 +16,7 @@ try:
 except ImportError:
     from csv_convert import ov_card, crowdness_data
 
-key = open("api_key.txt").readline()
+key = os.environ['NS_KEY']
 
 
 ns = NsApi(key)
