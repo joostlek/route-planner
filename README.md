@@ -1,10 +1,8 @@
 # route-planner
 
 
-## Dependencies (pip)
-* FastAPI
-* networkx
-* requests
+## Installing dependencies
+`pip install -r requirements.txt`
 
 
 ## How to run?
